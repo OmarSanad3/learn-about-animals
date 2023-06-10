@@ -32,8 +32,21 @@ class SummaryItem extends StatelessWidget {
           ),
           Column(
             children: [
-              Text(data['user-answer'] as String),
-              Text(data['correct-answer'] as String),
+              Text(
+                data['user-answer'] as String,
+                style: const TextStyle(
+                    color: Color.fromARGB(255, 24, 231, 242),
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                data['correct-answer'] as String,
+                style: const TextStyle(
+                  color: Color.fromARGB(255, 86, 197, 16),
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ],
           )
         ],
