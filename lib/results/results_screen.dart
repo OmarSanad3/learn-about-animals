@@ -20,7 +20,7 @@ class ResultsScreen extends StatelessWidget {
 
   List<Map<String, Object>> getSummaryData() {
     for (int i = 0; i < quizQuestionsIdxs.length; i++) {
-      quizQuestions.add(pathsPhotos[i]);
+      quizQuestions.add(pathsPhotos[quizQuestionsIdxs[i]]);
     }
     List<Map<String, Object>> theSummary = [];
     for (int i = 0; i < answers.length; i++) {
