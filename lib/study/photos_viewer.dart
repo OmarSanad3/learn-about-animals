@@ -2,7 +2,7 @@ import 'package:animals_photos/data/photos_by_key.dart';
 import 'package:flutter/material.dart';
 
 class PhotesViewer extends StatelessWidget {
-  PhotesViewer({super.key, required this.animalName});
+  const PhotesViewer({super.key, required this.animalName});
 
   final String animalName;
 
