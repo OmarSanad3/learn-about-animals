@@ -1,3 +1,4 @@
+import 'package:animals_photos/data/paths_for_photos.dart';
 import 'package:animals_photos/modules/photos_paths.dart';
 import 'package:animals_photos/quiz/quiz_questions.dart';
 import 'package:animals_photos/results/results_block.dart';
@@ -8,15 +9,19 @@ class ResultsScreen extends StatelessWidget {
   ResultsScreen({
     super.key,
     required this.answers,
-    required this.quizQuestions,
+    required this.quizQuestionsIdxs,
     required this.backToHomeScreen,
   });
 
   final List<String> answers;
-  final List<PhotoPath> quizQuestions;
+  final List<int> quizQuestionsIdxs;
+  List<PhotoPath> quizQuestions = [];
   final void Function() backToHomeScreen;
 
   List<Map<String, Object>> getSummaryData() {
+    for (int i = 0; i < quizQuestionsIdxs.length; i++) {
+      quizQuestions.add(pathsPhotos[i]);
+    }
     List<Map<String, Object>> theSummary = [];
     for (int i = 0; i < answers.length; i++) {
       theSummary.add({
