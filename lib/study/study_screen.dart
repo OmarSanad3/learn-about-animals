@@ -29,14 +29,17 @@ class _StudyScreenState extends State<StudyScreen> {
   }
 
   String capitalizeFirstLetter(String s) {
-    return '${s.toUpperCase()}${s.substring(1).toLowerCase()}';
+    return '${s[0].toUpperCase()}${s.substring(1).toLowerCase()}';
   }
 
   @override
   void initState() {
     theButtonsInSlider = [
       for (int i = 0; i < allAnimalsNames.length; i++)
-        ButtonClass(onTab: changeAnimal, text: allAnimalsNames[i]),
+        ButtonClass(
+          onTab: changeAnimal,
+          text: capitalizeFirstLetter(allAnimalsNames[i]),
+        ),
     ];
     super.initState();
   }
