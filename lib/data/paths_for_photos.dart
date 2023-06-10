@@ -1,4 +1,4 @@
-import 'package:animals_photos/my_classes/photos_paths.dart';
+import 'package:animals_photos/modules/photos_paths.dart';
 
 List<PhotoPath> pathsPhotos = [
   const PhotoPath(name: 'camel', path: 'assets/animals_images/camel1.jpg'),
