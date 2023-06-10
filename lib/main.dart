@@ -1,12 +1,11 @@
+import 'package:animals_photos/animals_project.dart';
 import 'package:flutter/material.dart';
-
-import 'package:animals_photos/gradient_container.dart';
 
 void main() {
   runApp(
     const MaterialApp(
       home: Scaffold(
-        body: GradientContainer(),
+        body: AnimalsProject(),
       ),
     ),
   );
