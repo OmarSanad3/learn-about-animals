@@ -1,5 +1,4 @@
 import 'package:animals_photos/data/all_animals_names.dart';
-import 'package:animals_photos/data/paths_for_photos.dart';
 import 'package:animals_photos/modules/photos_paths.dart';
 import 'package:animals_photos/quiz/answer_button.dart';
 import 'package:flutter/material.dart';
