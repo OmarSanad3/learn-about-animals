@@ -3,6 +3,12 @@ import 'package:flutter/material.dart';
 class ResultsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column();
+    return Column(
+      children: [
+        const Text(
+          'You have Answered (x) correct questions out of (y) questions',
+        ),
+      ],
+    );
   }
 }
