@@ -1,5 +1,5 @@
 import 'package:animals_photos/quiz/choose_num_questions.dart';
-import 'package:animals_photos/quiz_questions.dart';
+import 'package:animals_photos/quiz/quiz_questions.dart';
 import 'package:animals_photos/start_screen.dart';
 import 'package:animals_photos/study/study_screen.dart';
 import 'package:flutter/material.dart';
