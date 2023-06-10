@@ -40,8 +40,17 @@ class ResultsScreen extends StatelessWidget {
 
     return Column(
       children: [
-        const Text(
-          'You have Answered (x) correct questions out of (y) questions',
+        Container(
+          margin:
+              const EdgeInsets.only(top: 50, bottom: 30, left: 10, right: 10),
+          child: const Text(
+            'You have Answered (x) correct questions out of (y) questions',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
         ),
         Container(
           margin: const EdgeInsets.all(5),
@@ -50,6 +59,7 @@ class ResultsScreen extends StatelessWidget {
             child: ResultsBlock(summary: summaryData),
           ),
         ),
+        const SizedBox(height: 30),
         StartButton(
           buttonText: 'Home Screen',
           onTab: backToHomeScreen,
