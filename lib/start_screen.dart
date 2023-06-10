@@ -15,8 +15,11 @@ class StartScreen extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(
-          'assets/animals_images/animals_start_screen.jpg',
+        Opacity(
+          opacity: 0.8,
+          child: Image.asset(
+            'assets/animals_images/bird1.jpg',
+          ),
         ),
         const SizedBox(height: 100),
         Row(
