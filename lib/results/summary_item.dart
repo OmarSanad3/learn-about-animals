@@ -21,8 +21,9 @@ class SummaryItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           QuestionIdentifier(
-              isCorrect: data['user-answer'] == data['correct-answer'],
-              questionIdx: data['index'] as int),
+            isCorrect: data['user-answer'] == data['correct-answer'],
+            questionIdx: data['index'] as int,
+          ),
           Container(
             margin: const EdgeInsets.only(right: 20, left: 8),
             width: 150,
