@@ -1,7 +1,19 @@
+import 'package:animals_photos/quiz/quiz_questions.dart';
 import 'package:animals_photos/start_button.dart';
 import 'package:flutter/material.dart';
 
 class ResultsScreen extends StatelessWidget {
+  const ResultsScreen({
+    super.key,
+    required this.answers,
+    required this.quizQuestions,
+    required this.backToHomeScreen,
+  });
+
+  final List<String> answers;
+  final List<QuizQuestions> quizQuestions;
+  final void Function() backToHomeScreen;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,7 +30,7 @@ class ResultsScreen extends StatelessWidget {
         ),
         StartButton(
           buttonText: 'Home Screen',
-          onTab: () {},
+          onTab: backToHomeScreen,
           buttonIcon: const Icon(Icons.home_filled),
         )
       ],
