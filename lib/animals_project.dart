@@ -60,12 +60,24 @@ class _AnimalsProjectState extends State<AnimalsProject> {
     int idx;
     List<int> indexesQuestions = [];
     Set<int> takenIndexes = {};
-    while (indexesQuestions.length < numQuestions) {
-      idx = getRandom(0, pathsPhotos.length - 1);
-      if (!takenIndexes.contains(idx)) {
-        takenIndexes.add(idx);
-        indexesQuestions.add(idx);
+    if (numQuestions < pathsPhotos.length / 2) {
+      while (indexesQuestions.length < numQuestions) {
+        idx = getRandom(0, pathsPhotos.length - 1);
+        if (!takenIndexes.contains(idx)) {
+          takenIndexes.add(idx);
+          indexesQuestions.add(idx);
+        }
       }
+    } else {
+      List<int> indexes = [];
+      for (int i = 0; i < pathsPhotos.length; i++) {
+        indexes.add(i);
+      }
+      indexes.shuffle();
+      while (indexes.length > numQuestions) {
+        indexes.removeLast();
+      }
+      indexesQuestions = indexes;
     }
 
     return indexesQuestions;
@@ -97,7 +109,7 @@ class _AnimalsProjectState extends State<AnimalsProject> {
   void getNumQuestion(int numQ) {
     setState(() {
       activeScreen = 'question-screen';
-      displayedQuestions = generateQuestions(numQ);
+      displayedQuestions = generateQuestions(min(numQ, pathsPhotos.length));
     });
   }
 
