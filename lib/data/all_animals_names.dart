@@ -1,11 +1,10 @@
 List<String> allAnimalsNames = [
-  'cat',
+  'bird',
   'camel',
+  'cat',
   'horse',
   'donkey',
-  'bird',
   'lion',
-  'monke',
   'tiger',
   'cheeta',
 ];
