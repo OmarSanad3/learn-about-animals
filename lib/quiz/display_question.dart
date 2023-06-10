@@ -1,5 +1,6 @@
 import 'package:animals_photos/data/all_animals_names.dart';
 import 'package:animals_photos/data/paths_for_photos.dart';
+import 'package:animals_photos/modules/photos_paths.dart';
 import 'package:animals_photos/quiz/answer_button.dart';
 import 'package:flutter/material.dart';
 
@@ -10,26 +11,26 @@ final randomizer = Random();
 class DisplayQuestion extends StatelessWidget {
   const DisplayQuestion({
     super.key,
-    required this.questionIdx,
     required this.addToAnswers,
+    required this.displayedQuestion,
   });
 
   final void Function(String answer) addToAnswers;
 
-  final int questionIdx;
+  final PhotoPath displayedQuestion;
 
   int getRandom(int min, int max) {
     return min + randomizer.nextInt(max - min);
   }
 
   List<String> generateChoises() {
-    List<String> choises = [pathsPhotos[questionIdx].name];
-    Set<String> takenIdexes = {pathsPhotos[questionIdx].name};
+    List<String> choises = [displayedQuestion.name];
+    Set<String> takenChoises = {displayedQuestion.name};
     int currIdx;
     while (choises.length < 4) {
       currIdx = getRandom(0, allAnimalsNames.length - 1);
-      if (!takenIdexes.contains(allAnimalsNames[currIdx])) {
-        takenIdexes.add(allAnimalsNames[currIdx]);
+      if (!takenChoises.contains(allAnimalsNames[currIdx])) {
+        takenChoises.add(allAnimalsNames[currIdx]);
         choises.add(allAnimalsNames[currIdx]);
       }
     }
@@ -58,7 +59,7 @@ class DisplayQuestion extends StatelessWidget {
       children: [
         const SizedBox(height: 30),
         Image.asset(
-          pathsPhotos[questionIdx].path,
+          displayedQuestion.path,
           width: 350,
           height: 400,
         ),

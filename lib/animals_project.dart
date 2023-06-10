@@ -62,6 +62,7 @@ class _AnimalsProjectState extends State<AnimalsProject> {
     Set<int> takenIndexes = {};
     while (indexesQuestions.length < numQuestions) {
       idx = getRandom(0, pathsPhotos.length - 1);
+      print('Idx in while : $idx');
       if (!takenIndexes.contains(idx)) {
         takenIndexes.add(idx);
         indexesQuestions.add(idx);
@@ -95,6 +96,7 @@ class _AnimalsProjectState extends State<AnimalsProject> {
   }
 
   void getNumQuestion(int numQ) {
+    print('Num Q : $numQ');
     setState(() {
       activeScreen = 'question-screen';
       displayedQuestions = generateQuestions(numQ);
@@ -131,8 +133,8 @@ class _AnimalsProjectState extends State<AnimalsProject> {
 
     if (activeScreen == 'question-screen') {
       currScreen = QuizQuestions(
-        questionIdx: questionIdx,
         chooseAns: chooseAnswer,
+        displayedQuestion: pathsPhotos[displayedQuestions[questionIdx]],
       );
     }
 
