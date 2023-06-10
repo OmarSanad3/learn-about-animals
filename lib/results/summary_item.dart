@@ -1,3 +1,4 @@
+import 'package:animals_photos/results/question_identifier.dart';
 import 'package:flutter/material.dart';
 
 class SummaryItem extends StatelessWidget {
@@ -19,6 +20,9 @@ class SummaryItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          QuestionIdentifier(
+              isCorrect: data['user-answer'] == data['correct-answer'],
+              questionIdx: data['index'] as int),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 10),
             width: 200,
