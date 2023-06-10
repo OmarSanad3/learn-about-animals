@@ -47,14 +47,19 @@ class ResultsScreen extends StatelessWidget {
     return Column(
       children: [
         Container(
-          margin:
-              const EdgeInsets.only(top: 50, bottom: 30, left: 10, right: 10),
+          margin: const EdgeInsets.only(
+            top: 50,
+            bottom: 30,
+            left: 15,
+            right: 15,
+          ),
           child: Text(
             'You have Answered $correctAnswerCount correct questions out of $totalNumberOfQuestions questions',
+            textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: Color.fromARGB(255, 9, 180, 80),
             ),
           ),
         ),
