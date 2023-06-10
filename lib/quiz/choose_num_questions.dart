@@ -16,9 +16,19 @@ class ChooseNumQuestions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 50),
-        const Text('Choose Number Of Questions!'),
-        const SizedBox(height: 50),
+        Container(
+          margin:
+              const EdgeInsets.only(left: 20, right: 20, top: 70, bottom: 30),
+          alignment: Alignment.center,
+          child: const Text(
+            'Choose Number Of Questions!',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 30,
+              color: Color.fromRGBO(165, 214, 167, 1),
+            ),
+          ),
+        ),
         Container(
           height: 400,
           alignment: Alignment.center,
