@@ -1,3 +1,4 @@
+import 'package:animals_photos/data/all_animals_names.dart';
 import 'package:animals_photos/data/photos_by_key.dart';
 import 'package:animals_photos/start_button.dart';
 import 'package:animals_photos/study/button_class.dart';
@@ -27,18 +28,15 @@ class _StudyScreenState extends State<StudyScreen> {
     });
   }
 
+  String capitalizeFirstLetter(String s) {
+    return '${s.toUpperCase()}${s.substring(1).toLowerCase()}';
+  }
+
   @override
   void initState() {
     theButtonsInSlider = [
-      ButtonClass(onTab: changeAnimal, text: 'Cat'),
-      ButtonClass(onTab: changeAnimal, text: 'Camel'),
-      ButtonClass(onTab: changeAnimal, text: 'Bird'),
-      ButtonClass(onTab: changeAnimal, text: 'Monke'),
-      ButtonClass(onTab: changeAnimal, text: 'Donkey'),
-      ButtonClass(onTab: changeAnimal, text: 'Horse'),
-      ButtonClass(onTab: changeAnimal, text: 'Lion'),
-      ButtonClass(onTab: changeAnimal, text: 'Tiger'),
-      ButtonClass(onTab: changeAnimal, text: 'Cheeta'),
+      for (int i = 0; i < allAnimalsNames.length; i++)
+        ButtonClass(onTab: changeAnimal, text: allAnimalsNames[i]),
     ];
     super.initState();
   }
