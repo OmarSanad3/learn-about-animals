@@ -1,7 +1,8 @@
+import 'package:animals_photos/results/summary_item.dart';
 import 'package:flutter/material.dart';
 
 class ResultsBlock extends StatelessWidget {
-  ResultsBlock({super.key, required this.summary});
+  const ResultsBlock({super.key, required this.summary});
   final List<Map<String, Object>> summary;
 
   @override
@@ -10,7 +11,7 @@ class ResultsBlock extends StatelessWidget {
       children: [
         ...summary.map(
           (data) {
-            return Text('omar');
+            return SummaryItem(data: data);
           },
         ).toList(),
       ],
