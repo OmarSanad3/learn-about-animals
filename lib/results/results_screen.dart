@@ -37,14 +37,21 @@ class ResultsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Map<String, Object>> summaryData = getSummaryData();
 
+    int correctAnswerCount = 0, totalNumberOfQuestions = summaryData.length;
+    for (int i = 0; i < summaryData.length; i++) {
+      if (summaryData[i]['correct-answer'] == summaryData[i]['user-answer']) {
+        correctAnswerCount++;
+      }
+    }
+
     return Column(
       children: [
         Container(
           margin:
               const EdgeInsets.only(top: 50, bottom: 30, left: 10, right: 10),
-          child: const Text(
-            'You have Answered (x) correct questions out of (y) questions',
-            style: TextStyle(
+          child: Text(
+            'You have Answered $correctAnswerCount correct questions out of $totalNumberOfQuestions questions',
+            style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
               color: Colors.white,
