@@ -42,7 +42,7 @@ class _AnimalsProjectState extends State<AnimalsProject> {
 
   List<int> displayedQuestions = [];
 
-  int numOfQuestion = 0, questionIdx = 0;
+  int questionIdx = 0;
 
   @override
   void initState() {
@@ -88,7 +88,6 @@ class _AnimalsProjectState extends State<AnimalsProject> {
       chosenAnswer.add(answer);
       if (chosenAnswer.length == displayedQuestions.length) {
         activeScreen = 'results-screen';
-        chosenAnswer.clear();
       } else {
         questionIdx++;
       }
@@ -97,7 +96,6 @@ class _AnimalsProjectState extends State<AnimalsProject> {
 
   void getNumQuestion(int numQ) {
     setState(() {
-      numOfQuestion = numQ;
       activeScreen = 'question-screen';
       displayedQuestions = generateQuestions(numQ);
     });
@@ -105,6 +103,8 @@ class _AnimalsProjectState extends State<AnimalsProject> {
 
   void goStartScreen() {
     setState(() {
+      chosenAnswer.clear();
+      questionIdx = 0;
       activeScreen = 'start-screen';
     });
   }
