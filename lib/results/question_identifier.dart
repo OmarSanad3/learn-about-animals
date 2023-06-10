@@ -22,7 +22,7 @@ class QuestionIdentifier extends StatelessWidget {
         color: isCorrect ? Colors.green : Colors.red,
       ),
       child: Text(
-        questionIdx.toString(),
+        (questionIdx + 1).toString(),
         style: const TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.bold,
