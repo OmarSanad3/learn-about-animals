@@ -24,13 +24,11 @@ class SummaryItem extends StatelessWidget {
               isCorrect: data['user-answer'] == data['correct-answer'],
               questionIdx: data['index'] as int),
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 10),
-            width: 200,
-            height: 200,
+            margin: const EdgeInsets.only(right: 20, left: 8),
+            width: 150,
+            height: 150,
             child: Image.asset(
               data['photo'] as String,
-              width: 200,
-              height: 200,
               alignment: Alignment.topLeft,
             ),
           ),
