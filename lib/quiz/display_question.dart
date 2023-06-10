@@ -1,5 +1,6 @@
 import 'package:animals_photos/data/all_animals_names.dart';
 import 'package:animals_photos/data/paths_for_photos.dart';
+import 'package:animals_photos/quiz/answer_button.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:math';
@@ -7,7 +8,13 @@ import 'dart:math';
 final randomizer = Random();
 
 class DisplayQuestion extends StatelessWidget {
-  const DisplayQuestion({super.key, required this.questionIdx});
+  const DisplayQuestion({
+    super.key,
+    required this.questionIdx,
+    required this.addToAnswers,
+  });
+
+  final void Function(String answer) addToAnswers;
 
   final int questionIdx;
 
@@ -49,10 +56,15 @@ class DisplayQuestion extends StatelessWidget {
 
     return Column(
       children: [
+        const SizedBox(height: 30),
         Image.asset(
           pathsPhotos[questionIdx].path,
           width: 350,
+          height: 400,
         ),
+        const SizedBox(height: 30),
+        for (int i = 0; i < choises.length; i++)
+          AnswerButton(onTab: addToAnswers, text: choises[i]),
       ],
     );
   }
